@@ -49,6 +49,7 @@ export default function Page(){
     return (
         <Layout>
             <Head>
+                <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
                 <meta property="og:title" content={metadata.openGraph.title} />
                 <meta property="og:description" content={metadata.openGraph.description} />
                 <meta property="og:image" content={metadata.openGraph.images[0].url} />
