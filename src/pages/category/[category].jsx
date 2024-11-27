@@ -3,6 +3,23 @@ import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
+export const metadata = {
+    title: 'Prime Waves test page',
+    description: 'Prime Waves test page - Any description.',
+    openGraph: {
+        title: 'Prime Waves test page',
+        description: 'Prime Waves test page - Any description.',
+        images: [
+          {
+            url: 'https://mo-atef.com/static/mo-atef.png', 
+            width: 240,
+            height: 100,
+            alt: 'My logo', 
+          },
+        ],
+      },
+}
+
 export default function Page(){
     const [ count, setCount ] = useState(12);
     const [ sorting, setSorting ] = useState('a');

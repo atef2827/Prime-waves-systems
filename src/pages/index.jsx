@@ -3,6 +3,24 @@ import Layout from "@/components/Layout";
 import Image from "next/image";
 import { useState } from "react";
 
+export const metadata = {
+    title: 'Prime Waves test page',
+    description: 'Prime Waves test page - Any description.',
+    openGraph: {
+        title: 'Prime Waves test page',
+        description: 'Prime Waves test page - Any description.',
+        images: [
+          {
+            url: 'https://mo-atef.com/static/mo-atef.png', 
+            width: 240,
+            height: 100,
+            alt: 'My logo', 
+          },
+        ],
+      },
+}
+ 
+  
 export default function Page(){
     const [ active, setActive ] = useState(1);
     let items = [
