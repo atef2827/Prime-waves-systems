@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import PropTypes from 'prop-types';
+import GameLoop from './Games/loop';
+import Link from 'next/link';
 
 export default function GameSections ({ icon, title, link, items = [] }){
     return (
@@ -11,21 +12,11 @@ export default function GameSections ({ icon, title, link, items = [] }){
                 />
                 <h2 className="text-xl font-semibold text-[#FAFAFA] pl-2">{title}</h2>
                 <div className="grow" />
-                <a href={link} className="text-[#FAFAFA] text-sm">
+                <Link href={link} className="text-[#FAFAFA] text-sm">
                     View All
-                </a>
+                </Link>
             </div>
-            <div className='grid grid-cols-3 md:grid-cols-12 pt-3 gap-1'>
-                {
-                    items.map((item) => {
-                        return (
-                            <a href={item.link}>
-                                <Image src={`/games/${item.img}`} width={156} height={112} alt={item.img} />
-                            </a>
-                        );
-                    })
-                }
-            </div>
+            <GameLoop items={items} />
         </div>
     );
 }

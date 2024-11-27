@@ -19,3 +19,16 @@ body {
     font-size: 32px;
 }
 
+footer ul li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px){
+    #navbar-default:not(.hidden) { 
+        position: fixed;	
+        top: 80px;	
+        left: 0px;
+        background-color: var(--dark-bg);
+    }
+}
+body { padding-bottom: 64px; }
