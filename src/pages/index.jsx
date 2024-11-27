@@ -1,5 +1,6 @@
 import GameSections from "@/components/GameSections";
 import Layout from "@/components/Layout";
+import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -47,6 +48,26 @@ export default function Page(){
 
     return (
         <Layout>
+            <Head>
+                <meta property="og:title" content={metadata.openGraph.title} />
+                <meta property="og:description" content={metadata.openGraph.description} />
+                <meta property="og:image" content={metadata.openGraph.images[0].url} />
+                <meta property="og:image:width" content={metadata.openGraph.images[0].width.toString()} />
+                <meta property="og:image:height" content={metadata.openGraph.images[0].height.toString()} />
+                <meta property="og:image:alt" content={metadata.openGraph.images[0].alt} />
+                
+                {/* Twitter meta tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={metadata.title} />
+                <meta name="twitter:description" content={metadata.description} />
+                <meta name="twitter:image" content={metadata.openGraph.images[0].url} />
+
+                {/* Standard meta tags */}
+                <meta name="description" content={metadata.description} />
+                
+                {/* Page title */}
+                <title>{metadata.title}</title>
+            </Head>
             <div className="text-center">
                 {/* Carosuel */}
                     <Image className="block" src="/hero-carousel-mobile@2x.png" width={358} height={220} alt="Carousel Image" />

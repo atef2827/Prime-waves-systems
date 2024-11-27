@@ -1,5 +1,6 @@
 import GameLoop from "@/components/Games/loop";
 import Layout from "@/components/Layout";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -106,6 +107,26 @@ export default function Page(){
 
     return (
         <Layout hideNav={true} title={sections[1-id].title} link={'/'}>
+            <Head>
+                <meta property="og:title" content={metadata.openGraph.title} />
+                <meta property="og:description" content={metadata.openGraph.description} />
+                <meta property="og:image" content={metadata.openGraph.images[0].url} />
+                <meta property="og:image:width" content={metadata.openGraph.images[0].width.toString()} />
+                <meta property="og:image:height" content={metadata.openGraph.images[0].height.toString()} />
+                <meta property="og:image:alt" content={metadata.openGraph.images[0].alt} />
+                
+                {/* Twitter meta tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={metadata.title} />
+                <meta name="twitter:description" content={metadata.description} />
+                <meta name="twitter:image" content={metadata.openGraph.images[0].url} />
+
+                {/* Standard meta tags */}
+                <meta name="description" content={metadata.description} />
+                
+                {/* Page title */}
+                <title>{metadata.title}</title>
+            </Head>
             <div className="grid grid-cols-12 gap-4 max-w-sm mx-auto">
                 <div className="col-span-7">
                     <div className="relative">
